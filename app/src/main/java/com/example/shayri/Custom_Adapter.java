@@ -39,7 +39,7 @@ public class  Custom_Adapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View view, ViewGroup parent) {
-        view= LayoutInflater.from(mainActivity).inflate(R.layout.item_main_activity,parent,false);
+        view= LayoutInflater.from(mainActivity).inflate(R.layout.s1,parent,false);
         img=view.findViewById(R.id.s1_img);
         txt=view.findViewById(R.id.s1_txt);
         img.setImageResource(image[position]);
