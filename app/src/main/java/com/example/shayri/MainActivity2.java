@@ -505,7 +505,6 @@ public class MainActivity2 extends AppCompatActivity {
                     "अपनी तो बन गयी बेवफ़ा ज़िन्दगी," +"\n"+
                     "हर कोई जरुरत का तलबगार मिला !"};
     ListView listView;
-    ImageView imageView;
     int i,image;
     Custom_Adapter2 custom_adapter2;
 

@@ -14,7 +14,6 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:id="@+id/Button_Zoom"
-        android:background="@drawable/img_10"
 
         />
     </LinearLayout>
