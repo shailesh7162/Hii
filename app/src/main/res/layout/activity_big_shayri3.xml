@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Shayriopen"
+    tools:context=".big_shayri_Activity3"
     android:orientation="vertical"
-    android:gravity="center"
     android:layout_margin="10dp">
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,6 +38,8 @@
             />
 
     </RelativeLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -44,21 +47,19 @@
         android:gravity="center"
         android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:hint="text"
-        android:textAlignment="center"
-        android:id="@+id/Shayri_open_txt"
-        />
+        <TextView
+            android:id="@+id/big_screen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#03A9F4"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="shayri"
+            android:textColor="#EAD83A"
+            android:textSize="35sp" />
 
-    </androidx.cardview.widget.CardView>
-</LinearLayout>
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -109,4 +110,5 @@
             android:layout_marginHorizontal="5dp"
             android:background="@drawable/share" />
     </RelativeLayout>
+
 </LinearLayout>
