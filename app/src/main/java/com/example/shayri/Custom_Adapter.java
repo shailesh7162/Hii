@@ -12,7 +12,7 @@ public class  Custom_Adapter extends BaseAdapter {
     MainActivity mainActivity;
     int[] image;
     String[] type;
-    ListView lv;
+
     ImageView img;
     TextView txt;
 

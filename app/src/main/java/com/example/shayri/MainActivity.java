@@ -22,16 +22,14 @@ public class MainActivity extends AppCompatActivity
         custom_adapter=new Custom_Adapter(MainActivity.this,type,image);
         lv=findViewById(R.id.activity_main_lv);
         lv.setAdapter(custom_adapter);
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener()
-        {
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
-            {
-                Intent intent = new Intent(MainActivity.this,MainActivity2.class);
-                intent.putExtra("img",position);
-                intent.putExtra("image",image[position]);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent= new Intent(MainActivity.this,MainActivity2.class);
                 startActivity(intent);
+
             }
         });
+
     }
 }
