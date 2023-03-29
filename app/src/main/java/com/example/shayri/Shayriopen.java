@@ -14,9 +14,7 @@ public class Shayriopen extends AppCompatActivity
     TextView textView;
     String shayri;
     String[]shayriarr;
-    int k;
-
-
+    int s;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,9 +23,10 @@ public class Shayriopen extends AppCompatActivity
         setContentView(R.layout.activity_shayriopen);
         setContentView(R.layout.activity_shayriopen);
         textView=findViewById(R.id.Shayri_open_txt);
-      k=getIntent().getIntExtra("pos",0);
-      shayriarr=getIntent().getStringArrayExtra("shayri");
-      textView.setText(shayriarr[k]);
+        s=getIntent().getIntExtra("pos",0);
+        shayriarr=getIntent().getStringArrayExtra("shayri");
+        shayri=getIntent().getStringExtra("shayri");
+        textView.setText(""+shayri);
 
     }
 }

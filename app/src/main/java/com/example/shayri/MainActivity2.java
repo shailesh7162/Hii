@@ -550,47 +550,57 @@ public class MainActivity2 extends AppCompatActivity {
 
           listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
               @Override
-              public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+              public void onItemClick(AdapterView<?> adapterView, View view, int i1, long l) {
                   Intent intent = new Intent(MainActivity2.this,Shayriopen.class);
                   if(i==0) {
                       intent.putExtra("shayri", lvshayri);
-                      intent.putExtra("pos", i);
+                      intent.putExtra("shayri",lvshayri[i1]);
+                      intent.putExtra("pos", i1);
                   }
                   if(i==1) {
                       intent.putExtra("shayri", bdshayri);
-                      intent.putExtra("pos", i);
+                      intent.putExtra("shayri",bdshayri[i1]);
+                      intent.putExtra("pos", i1);
                   }
                   if(i==2) {
                       intent.putExtra("shayri", fdshayri);
-                      intent.putExtra("pos", i);
+                      intent.putExtra("shayri",fdshayri[i1]);
+                      intent.putExtra("pos", i1);
                   }
                   if(i==3) {
                       intent.putExtra("shayri", rmshayri);
-                      intent.putExtra("pos", i);
+                      intent.putExtra("shayri",rmshayri[i1]);
+                      intent.putExtra("pos", i1);
                   }
                   if(i==4) {
                       intent.putExtra("shayri", ydshayri);
-                      intent.putExtra("pos", i);
+                      intent.putExtra("shayri",ydshayri[i1]);
+                      intent.putExtra("pos", i1);
                   }
                   if(i==5) {
                       intent.putExtra("shayri", gmshayri);
-                      intent.putExtra("pos", i);
+                      intent.putExtra("shayri",gmshayri[i1]);
+                      intent.putExtra("pos", i1);
                   }
                   if(i==6) {
                       intent.putExtra("shayri", gnshayri);
-                      intent.putExtra("pos", i);
+                      intent.putExtra("shayri",gnshayri[i1]);
+                      intent.putExtra("pos", i1);
                   }
                   if(i==7) {
                       intent.putExtra("shayri", fnnyshayri);
-                      intent.putExtra("pos", i);
+                      intent.putExtra("shayri",fnnyshayri[i1]);
+                      intent.putExtra("pos", i1);
                   }
                   if(i==8) {
                       intent.putExtra("shayri", judaishayri);
-                      intent.putExtra("pos", i);
+                      intent.putExtra("shayri",judaishayri[i1]);
+                      intent.putExtra("pos", i1);
                   }
                   if(i==9) {
                       intent.putExtra("shayri", bewafashayri);
-                      intent.putExtra("pos", i);
+                      intent.putExtra("shayri",bewafashayri[i1]);
+                      intent.putExtra("pos", i1);
                   }
                   startActivity(intent);
 
