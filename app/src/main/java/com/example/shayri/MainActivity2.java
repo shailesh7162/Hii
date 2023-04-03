@@ -552,9 +552,10 @@ public class MainActivity2 extends AppCompatActivity {
               public void onItemClick(AdapterView<?> adapterView, View view, int i1, long l) {
                   Intent intent = new Intent(MainActivity2.this,Shayriopen.class);
                   if(i==0) {
-                      intent.putExtra("shayri", lvshayri);
+                    intent.putExtra("shayri",lvshayri[i]);
                       intent.putExtra("shayri",lvshayri[i1]);
-                      intent.putExtra("pos", i1);
+                      intent.putExtra("pos",i1);
+
                   }
                   if(i==1) {
                       intent.putExtra("shayri", bdshayri);
