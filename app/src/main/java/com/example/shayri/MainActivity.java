@@ -24,10 +24,10 @@ public class MainActivity extends AppCompatActivity
         lv.setAdapter(custom_adapter);
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int potion, long l) {
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Intent intent= new Intent(MainActivity.this,MainActivity2.class);
-                intent.putExtra("i",potion);
-                intent.putExtra("image",image[potion]);
+                intent.putExtra("i",position);
+                intent.putExtra("image",image[position]);
                 startActivity(intent);
 
             }
