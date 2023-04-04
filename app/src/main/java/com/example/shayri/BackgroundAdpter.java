@@ -14,6 +14,7 @@ public class BackgroundAdpter extends BaseAdapter
     Context context;
     int gradiant[];
 
+
     public BackgroundAdpter(Context context, int[] gradients)
     {
         this.context=context;
@@ -40,7 +41,7 @@ public class BackgroundAdpter extends BaseAdapter
     public View getView(int i, View view, ViewGroup viewGroup)
     {
         view= LayoutInflater.from(context).inflate(R.layout.grid_item_for_bottom,viewGroup,false);
-        TextView textView = view.findViewById(R.id.item_for_grid);
+        TextView textView = view.findViewById(R.id.item_for_bottom);
         textView.setBackgroundResource(gradiant[i]);
         return view;
     }
