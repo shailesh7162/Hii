@@ -122,8 +122,8 @@ public class Shayriopen extends AppCompatActivity implements View.OnClickListene
         }
         if(view.getId()==edit.getId())
         {
-            Intent intent= new Intent(Shayriopen.this,Edit_Activity.class);
-            intent.putExtra("shyari",shayri);
+            Intent intent= new Intent(Shayriopen.this,MainActivity3.class);
+            intent.putExtra("shayri",shayri);
             startActivity(intent);
         }
 
