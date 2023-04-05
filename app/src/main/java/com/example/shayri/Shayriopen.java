@@ -26,10 +26,10 @@ public class Shayriopen extends AppCompatActivity implements View.OnClickListene
 {
     TextView textView;
     String shayri;
-    String[]shayriarr;
+    String [] shayriarr;
     Button zoom,color,copy,left,edit,right,send;
     GridView gridView;
-    int S;
+    int postion;
     BackgroundAdpter backgroundAdpter;
 
 
@@ -41,8 +41,8 @@ public class Shayriopen extends AppCompatActivity implements View.OnClickListene
         setContentView(R.layout.activity_shayriopen);
         setContentView(R.layout.activity_shayriopen);
         textView=findViewById(R.id.Shayri_open_txt);
-        S=getIntent().getIntExtra("pos",0);
-        shayriarr=getIntent().getStringArrayExtra("shayr");
+        postion=getIntent().getIntExtra("pos",0);
+        shayriarr=getIntent().getStringArrayExtra("shayriarr");
         shayri=getIntent().getStringExtra("shayri");
         textView.setText(""+shayri);
         zoom=findViewById(R.id.Zoom_button);
@@ -68,7 +68,7 @@ public class Shayriopen extends AppCompatActivity implements View.OnClickListene
         if (view.getId()==zoom.getId())
         {
             BottomSheetDialog bottomSheetDialog =  new BottomSheetDialog(this);
-            bottomSheetDialog.setContentView(R.layout.gridview_for_shayri);
+            bottomSheetDialog.setContentView(R.layout.activity_shayriopen);
             gridView=bottomSheetDialog.findViewById(R.id.grid_view);
             BackgroundAdpter backgroundAdapter= new BackgroundAdpter(Shayriopen.this, Config.gradients);
             gridView.setAdapter(backgroundAdpter);
@@ -97,19 +97,18 @@ public class Shayriopen extends AppCompatActivity implements View.OnClickListene
         }
         if (view.getId()==left.getId())
         {
-            if (S>0)
+            if (postion>0)
             {
-                S--;
-                textView.setText(shayriarr[S]);
-
+                postion--;
+                textView.setText(shayriarr[postion]);
             }
         }
         if (view.getId()==right.getId())
         {
-            if (S<shayriarr.length-1)
+            if (postion<shayriarr.length-1)
             {
-                S++;
-                textView.setText(shayriarr[S]);
+                postion++;
+                textView.setText(shayriarr[postion]);
             }
         }
         if (view.getId()==send.getId())

@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class BackgroundAdpter extends BaseAdapter
 {
     Context context;
-    int gradiant[];
+    int []gradiant;
 
 
     public BackgroundAdpter(Context context, int[] gradients)
