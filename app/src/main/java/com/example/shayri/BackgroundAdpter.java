@@ -42,7 +42,7 @@ public class BackgroundAdpter extends BaseAdapter
     {
         view= LayoutInflater.from(context).inflate(R.layout.grid_item_for_bottom,viewGroup,false);
         TextView textView = view.findViewById(R.id.item_for_bottom);
-        textView.setBackgroundResource(gradiant[i]);
+        textView.setBackgroundResource(gradients[i]);
         return view;
     }
 }

@@ -1,8 +1,11 @@
 package com.example.shayri;
 
+import android.graphics.Typeface;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.TextView;
 
 public class emoji_Adapter extends BaseAdapter
 {
@@ -18,21 +21,32 @@ public class emoji_Adapter extends BaseAdapter
 
     @Override
     public int getCount() {
-        return 0;
+        return colours.length;
     }
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return i;
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        return null;
+    public View getView(int i, View view, ViewGroup viewGroup)
+    {
+        view= LayoutInflater.from(mainActivity3).inflate(R.layout.grid_item_for_bottom,viewGroup,false);
+        TextView textView = view.findViewById(R.id.item_for_bottom);
+        if(type.equals("font")) {
+            Typeface typeface = Typeface.createFromAsset(mainActivity3.getAssets(), Config.fonts[i]);
+            textView.setText("padu");
+            textView.setTypeface(typeface);
+        }
+        else {
+            textView.setText(Config.emoji[i]);
+        }
+        return view;
     }
 }

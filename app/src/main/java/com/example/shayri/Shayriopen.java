@@ -67,10 +67,10 @@ public class Shayriopen extends AppCompatActivity implements View.OnClickListene
 
         if (view.getId()==zoom.getId())
         {
-            BottomSheetDialog bottomSheetDialog =  new BottomSheetDialog(this);
-            bottomSheetDialog.setContentView(R.layout.activity_shayriopen);
+            BottomSheetDialog bottomSheetDialog =  new BottomSheetDialog(Shayriopen.this);
+            bottomSheetDialog.setContentView(R.layout.gridview_for_shayri);
             gridView=bottomSheetDialog.findViewById(R.id.grid_view);
-            BackgroundAdpter backgroundAdapter= new BackgroundAdpter(Shayriopen.this, Config.gradients);
+            backgroundAdpter= new BackgroundAdpter(Shayriopen.this, Config.gradients);
             gridView.setAdapter(backgroundAdpter);
             gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
