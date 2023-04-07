@@ -3,7 +3,14 @@ package com.example.shayri;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
+import android.icu.text.SimpleDateFormat;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,9 +19,16 @@ import android.widget.GridView;
 import android.widget.ScrollView;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 
 public class MainActivity3 extends AppCompatActivity implements View.OnClickListener
@@ -180,7 +194,45 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
 
             });
             bottomSheetDialog.show();
+        }if(view.getId()==share.getId())
+        {
+            Bitmap icon = getBitmapFromView(textView);
+            Intent share = new Intent(Intent.ACTION_SEND);
+            share.setType("image/jpeg");
+            ByteArrayOutputStream bytes = new ByteArrayOutputStream();
+            icon.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
+            int num=new Random().nextInt(2000);
+            SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault());
+            String c=simpleDateFormat.format(new Date());
+            File localefile = new File(Config.file.getAbsolutePath() + "img/" + c + ".jpg");
+
+            try {
+                localefile.createNewFile();
+                FileOutputStream fo = new FileOutputStream(localefile);
+                fo.write(bytes.toByteArray());
+                Toast.makeText(this, "download", Toast.LENGTH_SHORT).show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            share.putExtra(Intent.EXTRA_STREAM, Uri.parse(localefile.getAbsolutePath()));
+            startActivity(Intent.createChooser(share, "Share Image"));
         }
+    }
+    private Bitmap getBitmapFromView(View view)
+    {
+        Bitmap returnedBitmap = Bitmap.createBitmap(view.getWidth(),view.getHeight(),Bitmap.Config.ARGB_8888);
+        Canvas canvas=new Canvas(returnedBitmap);
+        Drawable drawable=view.getBackground();
+        if(drawable!=null)
+        {
+            drawable.draw(canvas);
+        }
+        else
+        {
+            canvas.drawColor(Color.WHITE);
+        }
+        view.draw(canvas);
+        return returnedBitmap;
     }
 
 }
